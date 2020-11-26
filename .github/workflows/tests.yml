@@ -32,9 +32,7 @@ jobs:
 
     - name: Display PHP/Coverage version
       run: |
-        php --version
-        php -m
-        php -r "var_dump(extension_loaded('xdebug'));"
+        php -i
 
     - name: Install PHP 7 dependencies
       run: composer update --${{ matrix.dependency-version }} --no-interaction --no-progress --ansi
