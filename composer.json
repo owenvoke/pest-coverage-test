@@ -1,5 +1,12 @@
 {
     "require-dev": {
-        "pestphp/pest": "^0.3.13"
-    }
+        "pestphp/pest": "^0.3",
+        "pestphp/pest-plugin-coverage": "dev-bugfix/coverage as 0.3"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/owenvoke/pest-plugin-coverage"
+        }
+    ]
 }
