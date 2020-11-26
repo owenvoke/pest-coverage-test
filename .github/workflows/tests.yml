@@ -23,7 +23,7 @@ jobs:
       with:
         php-version: ${{ matrix.php }}
         tools: composer:v2
-        coverage: xdebug
+        coverage: xdebug3
 
     - name: Setup Problem Matches
       run: |
@@ -31,7 +31,10 @@ jobs:
         echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
     - name: Display PHP/Coverage version
-      run: php --version
+      run: |
+        php --version
+        php -m
+        php -r "var_dump(extension_loaded('xdebug'));"
 
     - name: Install PHP 7 dependencies
       run: composer update --${{ matrix.dependency-version }} --no-interaction --no-progress --ansi
